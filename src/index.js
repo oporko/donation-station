@@ -1,9 +1,10 @@
-function render(goal, current) {
+import "./style/thermometer.less";
 
-  const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2
+function render(goal, current) {
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
   });
 
   const fmGoal = formatter.format(goal);
@@ -25,7 +26,7 @@ function updateHeight(goal, current) {
   const elMeter = document.getElementById("thermometer-meter");
 
   const maxHeight = 225; // overal thermometer height - 50
-  const level = maxHeight - (maxHeight * (current / goal));
+  const level = maxHeight - maxHeight * (current / goal);
   const currentTop = level - elCurrent.clientHeight / 2;
   const meterHeight = maxHeight - level;
 
