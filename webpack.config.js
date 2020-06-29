@@ -27,5 +27,6 @@ module.exports = {
   devServer: {
     openPage: "example.html",
     open: true,
+    publicPath: "/dist/",
   },
 };
