@@ -1,3 +1,4 @@
+import "./donation-station.less";
 import Thermometer from "./Thermometer";
 import DonorRoll from "./DonorRoll";
 

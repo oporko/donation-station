@@ -1,6 +1,6 @@
 {
   "name": "donation-station",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A donation tracking widget with thermometer and donor roll",
   "author": "Mike Dahlke",
   "license": "MIT",
