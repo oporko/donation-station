@@ -11,10 +11,13 @@
         <div id="donation-station"></div>
         <script>
             donationStation({
-                id: "donation-station",
-                goal: 9000,
-                current: 4500,
-                donors: [
+                id: "donation-station", // target element for rendering widget, contents will be replaced
+                goal: 9000, // value in dollars
+                current: 4500, // value in dollars
+                speed: 'medium', // speed of scroll: slow, medium or fast
+                locale: 'en-US', // locale for currency formatting
+                currency: 'USD', // currency for formatting
+                donors: [ // list of donors, name and amount donated in dollars
                     {
                         name: "Ted Testman",
                         amount: 230

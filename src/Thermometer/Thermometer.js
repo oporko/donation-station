@@ -10,19 +10,18 @@ export class Thermometer {
     const fmCurrent = this.currencyFormatter.format(this.current);
 
     return `
-  <div id="thermometer-wrap">
-    <div id="thermometer">
-      <span id="thermometer-current" class="current">${fmCurrent}</span>
-      <span class="goal">${fmGoal}</span>
-      <div class="hilite"></div>
-      <div id="thermometer-meter" class="meter"></div>
-    </div>
-  </div>`;
+      <div id="thermometer">
+        <span class="current">${fmCurrent}</span>
+        <span class="goal">${fmGoal}</span>
+        <div class="hilite"></div>
+        <div class="meter"></div>
+      </div>
+    `;
   }
 
   mount(container) {
-    const elCurrent = container.querySelector("#thermometer-current");
-    const elMeter = container.querySelector("#thermometer-meter");
+    const elCurrent = container.querySelector(".current");
+    const elMeter = container.querySelector(".meter");
 
     const maxHeight = 225; // overall thermometer height - 50
     const level = maxHeight - maxHeight * (this.current / this.goal);
@@ -38,5 +37,7 @@ export class Thermometer {
       elMeter.style["-moz-border-raius"] = borderRadius;
       elMeter.style["border-radius"] = borderRadius;
     }
+
+    // TODO extend right margin depending on width of current element
   }
 }

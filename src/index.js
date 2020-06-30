@@ -2,11 +2,11 @@ import Thermometer from "./Thermometer";
 import DonorRoll from "./DonorRoll";
 
 function donationStation(config) {
-  const { id, goal, current, donors } = config;
+  const { id, goal, current, donors, locale, currency, speed } = config;
 
-  const currencyFormatter = new Intl.NumberFormat("en-US", {
+  const currencyFormatter = new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: "USD",
+    currency,
     minimumFractionDigits: 2,
   });
 
@@ -22,6 +22,7 @@ function donationStation(config) {
   donorRoll.setProps({
     currencyFormatter,
     donors,
+    speed,
   });
 
   const container = document.getElementById(id);
